@@ -1,5 +1,7 @@
 package com.celad.rental.ui.addons;
 
+import java.util.Collections;
+
 import javax.annotation.PostConstruct;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -12,8 +14,8 @@ public class RentalCoreAgencyAddon {
 	
 	@PostConstruct
 	public void init(IEclipseContext context) {
+		//Collections<RentalAgency> RentalAgencyCollection = new Collections<RentalAgency>();
 		context.set(RentalAgency.class, RentalAgencyGenerator.createSampleAgency());
 		//RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
 	}
-
 }

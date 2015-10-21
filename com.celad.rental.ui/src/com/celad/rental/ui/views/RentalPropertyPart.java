@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Label;
 
 import com.celad.rental.core.Rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.views.rentalView"; //$NON-NLS-1$
@@ -27,7 +28,7 @@ public class RentalPropertyPart {
 	private Label customerTitle;
 
 	@PostConstruct
-	public void createContent(Composite parent) {
+	public void createContent(Composite parent, RentalAgency agency) {
 		parent.setLayout(new GridLayout(1, false));
 
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -70,7 +71,7 @@ public class RentalPropertyPart {
 		Label endDateTitle = new Label(dateGroup, SWT.NONE);
 		endDateTitle.setText("End date");
 		endDateLabel = new Label(dateGroup, SWT.NONE);
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		setRental(agency.getRentals().get(0));
 
 	}
 

@@ -6,7 +6,7 @@
         <children xsi:type="basic:Part" xmi:id="_Z11YwHfNEeWT5NPgfDUxMQ" elementId="com.celad.rental.eap1.part.0" contributionURI="bundleclass://com.celad.rental.ui/com.celad.rental.ui.views.RentalPropertyPart" iconURI="platform:/plugin/com.celad.rental.eap1/icons/sample.png"/>
       </children>
       <children xsi:type="basic:PartStack" xmi:id="_gCGDsHfuEeWF3o8cU6GWag" elementId="com.celad.rental.eap1.partstack.1">
-        <children xsi:type="basic:Part" xmi:id="_hnhwcHfuEeWF3o8cU6GWag" elementId="com.celad.rental.eap1.part.1"/>
+        <children xsi:type="basic:Part" xmi:id="_hnhwcHfuEeWF3o8cU6GWag" elementId="com.celad.rental.eap1.part.1" contributionURI="bundleclass://com.celad.rental.ui/com.celad.rental.ui.views.RentalAgencyViewerPart"/>
       </children>
     </children>
     <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
