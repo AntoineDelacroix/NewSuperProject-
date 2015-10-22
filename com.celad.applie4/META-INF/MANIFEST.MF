@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Require-Bundle: javax.inject;bundle-version="0.0.0",org.eclipse.swt;bu
+ ndle-version="0.0.0",org.eclipse.e4.ui.model.workbench;bundle-version
+ ="0.0.0",org.eclipse.jface;bundle-version="0.0.0",org.eclipse.e4.ui.s
+ ervices;bundle-version="0.0.0",org.eclipse.e4.ui.workbench;bundle-ver
+ sion="0.0.0",org.eclipse.e4.core.di;bundle-version="0.0.0",org.eclips
+ e.e4.ui.di;bundle-version="0.0.0",org.eclipse.e4.core.contexts;bundle
+ -version="0.0.0",org.eclipse.core.runtime;bundle-version="0.0.0",com.
+ celad.rental.ui;bundle-version="1.0.0",com.opcoach.e4.preferences;bun
+ dle-version=1.0.0
+Bundle-Vendor: CELAD
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 1.0.0.qualifier
+Bundle-Name: Applie4
+Bundle-Activator: com.celad.applie4.Activator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.celad.applie4;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+
