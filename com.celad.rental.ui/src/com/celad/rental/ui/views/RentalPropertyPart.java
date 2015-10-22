@@ -7,6 +7,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -20,16 +21,22 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
+import com.celad.rental.ui.addons.RentalUIConstants;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 
-public class RentalPropertyPart {
+public class RentalPropertyPart  implements RentalUIConstants{
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.views.rentalView"; //$NON-NLS-1$
 
 	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
 	// private Rental currentRental;
 	private Label customerTitle;
 
+	
+	@Inject
+	@Named(RENTAL_UI_REGISTRY)
+	private ImageRegistry registry;
+	
 	@PostConstruct
 	public void createContent(Composite parent, RentalAgency agency) {
 		parent.setLayout(new GridLayout(1, false));
@@ -47,14 +54,22 @@ public class RentalPropertyPart {
 
 		DragSource ds = new DragSource(rentedObjectLabel, DND.DROP_COPY);
 		ds.setTransfer(new Transfer[] { TextTransfer.getInstance() });
-		ds.addDragListener(new DragSourceAdapter() {
-			public void dragSetData(DragSourceEvent event) {
-				if (TextTransfer.getInstance().isSupportedType(event.dataType)) {
-					event.data = rentedObjectLabel.getText();
+		ds.addDragListener(new DragSourceAdapter()
+			{
+				public void dragSetData(DragSourceEvent event)
+				{
+					if (TextTransfer.getInstance().isSupportedType(event.dataType))
+					{
+						event.data = rentedObjectLabel.getText();
+					}
 				}
-			}
 
-		});
+				public void dragStart(DragSourceEvent event)
+				{
+					event.image = registry.get(RentalUIConstants.IMG_AGENCY);
+				}
+
+			});
 
 		customerTitle = new Label(infoGroup, SWT.NONE);
 		customerTitle.setText("Client : ");

@@ -1,11 +1,14 @@
 package com.celad.rental.ui.views;
 
-import java.util.TimerTask;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.IFontProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -21,10 +24,7 @@ import com.opcoach.training.rental.RentalAgency;
 
 public class RentalAgencyLabelProvider extends LabelProvider
 		implements IColorProvider, IFontProvider, RentalUIConstants {
-	private static final String ColorRegistry = null;
 
-	
-    
 	@Inject
 	@Named(RENTAL_UI_REGISTRY)
 	private ImageRegistry registry;
@@ -53,7 +53,7 @@ public class RentalAgencyLabelProvider extends LabelProvider
 		// length-4)+".png");
 		// System.out.println(element.getClass().getSimpleName());
 		// }
-		
+
 		Image image = null;
 		if (element instanceof Customer) {
 			image = registry.get(IMG_CUSTOMER);
@@ -78,10 +78,36 @@ public class RentalAgencyLabelProvider extends LabelProvider
 		return Display.getCurrent().getSystemColor(SWT.COLOR_WHITE);
 	}
 
+	@Inject
+	IPreferenceStore PStore;
+
 	@Override
 	public Color getBackground(Object element) {
+		Color returnedColor = null;
 		// TODO Auto-generated method stub
-		return Display.getCurrent().getSystemColor(SWT.COLOR_BLACK);
+		if (element instanceof Customer) {
+			String objectPref = (String) PStore.getString(PREF_CUSTOMER_COLOR);
+			Color col = transformStringIntoColorElement(objectPref);
+			return col;
+			// returnedColor =
+		} else {
+			String objectPref = (String) PStore.getString(PREF_OBJECT_COLOR);
+			Color col = transformStringIntoColorElement(objectPref);
+			return col;
+			// image = registry.get(IMG_OBJECT);
+		}
+		// return Display.getCurrent().getSystemColor(SWT.COLOR_BLACK);
+	}
+
+	public Color transformStringIntoColorElement(String inputString) {
+		ColorRegistry cr = JFaceResources.getColorRegistry();
+		
+		Color col = cr.get(inputString);
+		if (col == null) {
+			cr.put(inputString, StringConverter.asRGB(inputString));
+			col = cr.get(inputString);
+		}
+		return col;
 	}
 
 	@Override
