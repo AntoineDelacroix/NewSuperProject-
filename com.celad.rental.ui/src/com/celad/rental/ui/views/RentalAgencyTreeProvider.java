@@ -36,7 +36,7 @@ public class RentalAgencyTreeProvider implements ITreeContentProvider {
 	public Object[] getChildren(Object parentElement) {
 		// TODO Auto-generated method stub
 		Object[] results = null;
-		/*if (parentElement instanceof RentalAgency) {
+		if (parentElement instanceof RentalAgency) {
 			// results = ((RentalAgency)
 			// parentElement).getCustomers().toArray();
 			RentalAgency a = (RentalAgency) parentElement;
@@ -45,11 +45,11 @@ public class RentalAgencyTreeProvider implements ITreeContentProvider {
 		} else if (parentElement instanceof Node) {
 			results = ((Node) parentElement).getChildren();
 			// results = ((EObject) parentElement).eContents().toArray();
-		} else{*/
-			results = ((EObject) parentElement).eContents().toArray();
+		} else{
+			//results = ((EObject) parentElement).eContents().toArray();
 			//			results = ((EObject) parentElement).eGet(RentalPackage.Literals.RENTAL_AGENCY__CUSTOMERS);
 
-		//}
+		}
 		
 		//create a class
 		/*try {

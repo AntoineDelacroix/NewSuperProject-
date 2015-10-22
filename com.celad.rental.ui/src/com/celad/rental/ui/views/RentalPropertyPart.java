@@ -1,8 +1,12 @@
 package com.celad.rental.ui.views;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -16,7 +20,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
-import com.celad.rental.core.Rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 
@@ -24,7 +27,7 @@ public class RentalPropertyPart {
 	public static final String VIEW_ID = "com.opcoach.rental.e4.ui.views.rentalView"; //$NON-NLS-1$
 
 	private Label rentedObjectLabel, customerNameLabel, startDateLabel, endDateLabel;
-	//private Rental currentRental;
+	// private Rental currentRental;
 	private Label customerTitle;
 
 	@PostConstruct
@@ -75,11 +78,19 @@ public class RentalPropertyPart {
 
 	}
 
+	@Inject
+	@Optional
+	public void receiveSelection(@Named(IServiceConstants.ACTIVE_SELECTION) Rental r) {
+		setRental(r);
+	}
+
 	public void setRental(Rental r) {
-		rentedObjectLabel.setText(r.getRentedObject().getName());
-		this.customerNameLabel.setText(r.getCustomer().getDisplayName());
-		this.startDateLabel.setText(r.getStartDate().toString());
-		this.endDateLabel.setText(r.getEndDate().toString());
+		if (r != null) {
+			rentedObjectLabel.setText(r.getRentedObject().getName());
+			this.customerNameLabel.setText(r.getCustomer().getDisplayName());
+			this.startDateLabel.setText(r.getStartDate().toString());
+			this.endDateLabel.setText(r.getEndDate().toString());
+		}
 	}
 
 	@Focus
