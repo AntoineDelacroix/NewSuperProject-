@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.celad.rental.feature_1.0.0.201510231452.jar" id="com.celad.rental.feature" version="1.0.0.201510231452">
+   <feature url="features/com.celad.rental.feature_1.0.0.201510231529.jar" id="com.celad.rental.feature" version="1.0.0.201510231529">
       <category name="Rental"/>
    </feature>
    <category-def name="Rental" label="Rental">
