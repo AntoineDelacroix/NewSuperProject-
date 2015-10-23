@@ -3,23 +3,21 @@ package com.celad.rental.eap1.handlers;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.RTFTransfer;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 
-import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.impl.CustomerImpl;
 
 public class CopyHandler {
 	@Execute
 	public void execute(Display display, @Named(IServiceConstants.ACTIVE_SELECTION) Object customer) {
-		CustomerImpl customerSelected = (CustomerImpl)customer;
-		System.out.println("Client : First name :"+customerSelected.getFirstName()+" | Last Name : "+customerSelected.getLastName());
+		CustomerImpl customerSelected = (CustomerImpl) customer;
+		System.out.println("Client : First name :" + customerSelected.getFirstName() + " | Last Name : "
+				+ customerSelected.getLastName());
 		Clipboard clipboard = new Clipboard(display);
 		String textData = customer.toString();
 		

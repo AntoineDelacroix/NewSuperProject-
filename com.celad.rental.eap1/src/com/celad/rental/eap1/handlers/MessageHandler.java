@@ -17,7 +17,6 @@ public class MessageHandler {
 
 	@CanExecute
 	public boolean canExecute() {
-		System.out.println("canExecute");
 		return true;
 	}
 }
