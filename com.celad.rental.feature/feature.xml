@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.celad.rental.feature"
+      label="Feature"
+      version="1.0.0.qualifier"
+      provider-name="CELAD">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      Vous n&apos;avez aucun droit!
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.11.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt" version="3.104.1" match="greaterOrEqual"/>
+      <import plugin="javax.inject"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.e4.ui.services"/>
+      <import plugin="org.eclipse.e4.ui.workbench"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="org.eclipse.e4.core.contexts"/>
+      <import plugin="com.celad.rental.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.tools.bundle.spy" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.tools.context.spy" version="0.17.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.tools.css.spy" version="0.12.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.tools.spy" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swtbot.eclipse.spy" version="2.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.tools.emf.liveeditor" version="0.12.0" match="greaterOrEqual"/>
+      <import plugin="com.opcoach.e4.preferences" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.common" version="2.11.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.services"/>
+      <import plugin="org.eclipse.e4.core.di.annotations"/>
+      <import plugin="org.eclipse.e4.core.di" version="1.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.e4.core.di.extensions" version="0.13.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench" version="1.1.100.v20150407-1430" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.celad.rental.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.celad.rental.eap1"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.celad.rental.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.opcoach.e4.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
