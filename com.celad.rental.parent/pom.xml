@@ -58,6 +58,7 @@
 	<!-- the modules that should be built together -->
 	<modules>
 		<module>../com.celad.rental.core</module>
+		<module>../com.celad.rental.core.test</module>
 	</modules>
 
 </project>
