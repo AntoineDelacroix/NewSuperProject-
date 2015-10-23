@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='com.celad.rental.core.test' version='1.0.0.201510231514' singleton='false'>
+    <update id='com.celad.rental.core.test' range='[0.0.0,1.0.0.201510231514)' severity='0'/>
+    <properties size='5'>
+      <property name='org.eclipse.equinox.p2.name' value='Test'/>
+      <property name='org.eclipse.equinox.p2.provider' value='CELAD'/>
+      <property name='maven-groupId' value='com.opcoach.training.e4'/>
+      <property name='maven-artifactId' value='com.celad.rental.core.test'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+    </properties>
+    <provides size='4'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.celad.rental.core.test' version='1.0.0.201510231514'/>
+      <provided namespace='osgi.bundle' name='com.celad.rental.core.test' version='1.0.0.201510231514'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+      <provided namespace='osgi.fragment' name='com.celad.rental.core' version='1.0.0.201510231514'/>
+    </provides>
+    <requires size='2'>
+      <required namespace='osgi.bundle' name='com.celad.rental.core' range='1.0.0'/>
+      <required namespace='osgi.bundle' name='org.junit' range='4.12.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='com.celad.rental.core.test' version='1.0.0.201510231514'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: com.celad.rental.core.test&#xA;Bundle-Version: 1.0.0.201510231514&#xA;Fragment-Host: com.celad.rental.core;bundle-version=&quot;1.0.0&quot;&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: org.junit;bundle-version="4.12.0"
+Bundle-Vendor: CELAD
+Fragment-Host: com.celad.rental.core;bundle-version="1.0.0"
+Bundle-Version: 1.0.0.201510231514
+Bundle-Name: Test
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.celad.rental.core.test
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

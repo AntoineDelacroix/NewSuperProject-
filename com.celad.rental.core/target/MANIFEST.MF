@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;bundle-
 Bundle-Vendor: CELAD
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: rental.jar,.
-Bundle-Version: 1.0.0.201510231500
+Bundle-Version: 1.0.0.201510231514
 Bundle-Name: Core
 Bundle-Activator: com.celad.rental.core.Rental.core.RentalCoreActivato
  r
