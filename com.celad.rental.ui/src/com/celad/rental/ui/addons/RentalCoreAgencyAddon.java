@@ -12,10 +12,10 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
@@ -33,14 +33,14 @@ public class RentalCoreAgencyAddon implements RentalUIConstants {
 		context.set(IPreferenceStore.class, new ScopedPreferenceStore(InstanceScope.INSTANCE, "com.celad.rental.ui"));
 	}
 
-	@Inject 
-	public void getExtension(IExtensionRegistry reg){
+	@Inject
+	public void getExtension(IExtensionRegistry reg) {
 		IExtensionPoint extp = reg.getExtensionPoint("org.eclipse.core.runtime.adapters");
-		IExtension [] extensions = extp.getExtensions();
-		for(IExtension ext : extensions){
-			for(IConfigurationElement elt : ext.getConfigurationElements()){
+		IExtension[] extensions = extp.getExtensions();
+		for (IExtension ext : extensions) {
+			for (IConfigurationElement elt : ext.getConfigurationElements()) {
 				String attValue = elt.getAttribute("class");
-				System.out.println("Adapter :"+ elt.getNamespaceIdentifier()+" Class:"+attValue);
+				System.out.println("Adapter :" + elt.getNamespaceIdentifier() + " Class:" + attValue);
 			}
 		}
 	}

@@ -32,7 +32,6 @@ public class RentalPropertyPart  implements RentalUIConstants{
 	// private Rental currentRental;
 	private Label customerTitle;
 
-	
 	@Inject
 	@Named(RENTAL_UI_REGISTRY)
 	private ImageRegistry registry;
